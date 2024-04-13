@@ -19,15 +19,9 @@ console.log("\n# # # TASK 2 # # #");
 function createCounter() {
   let count = 0;
   return {
-    increment: () => {
-      count++;
-    },
-    decrement: () => {
-      count--;
-    },
-    getCount: () => {
-      return count;
-    },
+    increment: () => count++,
+    decrement: () => count--,
+    getCount: () => count,
   };
 }
 
@@ -36,32 +30,30 @@ console.log(counter.getCount());
 
 counter.increment();
 counter.increment();
+counter.increment();
 console.log(counter.getCount());
 
 counter.decrement();
 console.log(counter.getCount());
 
 /* Task 3
-- Напишите рекурсивную функцию **findElementByClass**, которая принимает корневой элемент дерева DOM и название класса в качестве аргументов
+- Напишите рекурсивную функцию **findElementByClass**, 
+  которая принимает корневой элемент дерева DOM и название класса в качестве аргументов
 - Функция должна возвращать первый найденный элемент с указанным классом в этом дереве
 */
 console.log("\n# # # TASK 3 # # #");
 
-function findElementByClass(root, className) {
-  if (root.classList && root.classList.contains(className)) {
-    return root;
-  }
+const findElementByClass = (root, className) => {
+  // Впервые попробовал составить условие с "условной цепочкой" :) Прикольно работает)
+  if (root.classList?.contains(className)) return root;
   for (let i = 0; i < root.children.length; i++) {
-    const child = root.children[i];
-    const result = findElementByClass(child, className);
-    if (result) {
-      return result;
-    }
+    const result = findElementByClass(root.children[i], className);
+    if (result) return result;
   }
   return null;
-}
+};
 
-const rootEl = document.querySelector('body');
+const rootEl = document.querySelector("body");
 
 // Ищем элемент с существующим классом
 console.log(findElementByClass(rootEl, "text"));
