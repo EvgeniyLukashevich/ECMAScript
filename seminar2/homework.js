@@ -32,7 +32,7 @@ class Book {
   };
 }
 
-const book = new Book("Сияние", "С. Кинг", 325); // передадим все необходимые аргументы
+const book = new Book("The Shining", "Stephen King", 325); // передадим все необходимые аргументы
 const newBook = new Book(); // создадим экземпляр не передавая аргументов
 book.displayInfo();
 newBook.displayInfo();
@@ -68,7 +68,7 @@ class Student {
   };
 }
 
-const student = new Student("Петров В. И.", 15, "9A"); // передадим все необходимые аргументы
-const newStudent = new Student("Васильев К. Н."); // создадим экземпляр передав часть аргументов
+const student = new Student("Luke Skywalker", 15, "9th grade"); // передадим все необходимые аргументы
+const newStudent = new Student("Darth Vader"); // создадим экземпляр передав часть аргументов
 student.displayInfo();
 newStudent.displayInfo();
