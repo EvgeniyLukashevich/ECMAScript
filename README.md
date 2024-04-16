@@ -21,14 +21,14 @@
 ```javascript
 // Пример использования класса
 
-const student1 = new Student(""John Smith"", 16, ""10th grade"");
+const student1 = new Student("John Smith", 16, "10th grade");
 student1.displayInfo();
 // Вывод:
 // Name: John Smith
 // Age: 16
 // Grade: 10th grade
 
-const student2 = new Student(""Jane Doe"", 17, ""11th grade"");
+const student2 = new Student("Jane Doe", 17, "11th grade");
 student2.displayInfo();
 // Вывод:
 // Name: Jane Doe
